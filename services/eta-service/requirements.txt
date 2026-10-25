@@ -1,0 +1,11 @@
+# Runtime dependencies for the ETA service.
+# Lower bounds only for now; exact versions get frozen after the first
+# successful install on the project machine (see README, "Freezing versions").
+numpy>=2.0
+pandas>=2.2
+# Pinned exactly: the committed model in models/ only loads with the scikit-learn
+# version that trained it (see docs/model.md).
+scikit-learn==1.9.1
+joblib>=1.4
+   fastapi==0.143.0
+   uvicorn>=0.30

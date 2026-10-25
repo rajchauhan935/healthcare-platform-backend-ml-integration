@@ -1,0 +1,23 @@
+﻿{
+  "version": 1,
+  "status": "design-only",
+  "issuer": "health-platform-core",
+  "audiences": [
+    "health-platform-booking",
+    "health-platform-homecare"
+  ],
+  "algorithm": "RS256",
+  "tokenType": "access",
+  "requiredClaims": [
+    "sub",
+    "iss",
+    "aud",
+    "iat",
+    "exp",
+    "token_type"
+  ],
+  "identityPolicy": {
+    "centralSubjectIsLocalDatabaseId": false,
+    "localAccountMappingRequired": true
+  }
+}

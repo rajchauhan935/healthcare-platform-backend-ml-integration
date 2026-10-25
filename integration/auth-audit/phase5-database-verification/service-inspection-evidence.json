@@ -1,0 +1,29 @@
+﻿{
+    "status":  "pending",
+    "services":  {
+                     "core":  {
+                                  "databaseIdentityVerified":  false,
+                                  "restrictedRoleVerified":  false,
+                                  "effectivePrivilegesReviewed":  false,
+                                  "connectionSecurityReviewed":  false,
+                                  "schemaMetadataInspected":  false,
+                                  "accountSchemaDocumented":  false
+                              },
+                     "booking":  {
+                                     "databaseIdentityVerified":  false,
+                                     "restrictedRoleVerified":  false,
+                                     "effectivePrivilegesReviewed":  false,
+                                     "connectionSecurityReviewed":  false,
+                                     "schemaMetadataInspected":  false,
+                                     "accountSchemaDocumented":  false
+                                 },
+                     "homecare":  {
+                                      "databaseIdentityVerified":  false,
+                                      "restrictedRoleVerified":  false,
+                                      "effectivePrivilegesReviewed":  false,
+                                      "connectionSecurityReviewed":  false,
+                                      "schemaMetadataInspected":  false,
+                                      "accountSchemaDocumented":  false
+                                  }
+                 }
+}

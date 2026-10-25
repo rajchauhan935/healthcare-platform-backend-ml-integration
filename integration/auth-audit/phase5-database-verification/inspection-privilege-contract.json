@@ -1,0 +1,23 @@
+﻿{
+    "version":  1,
+    "status":  "verification-pending",
+    "requirements":  {
+                         "dedicatedAccount":  true,
+                         "superuserForbidden":  true,
+                         "createRoleForbidden":  true,
+                         "createDatabaseForbidden":  true,
+                         "databaseCreateForbidden":  true,
+                         "applicationTableWriteForbidden":  true,
+                         "applicationTableReadNotRequired":  true,
+                         "schemaMetadataVisibilityRequired":  true,
+                         "readOnlyTransactionRequired":  true,
+                         "actualDatabaseNameVerificationRequired":  true
+                     },
+    "evidence":  {
+                     "actualRoleVerified":  false,
+                     "databasePrivilegesVerified":  false,
+                     "tablePrivilegesVerified":  false,
+                     "metadataVisibilityVerified":  false,
+                     "connectionSecurityReviewed":  false
+                 }
+}

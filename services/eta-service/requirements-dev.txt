@@ -1,0 +1,5 @@
+# Development-only tools: tests and the Jupyter notebook.
+-r requirements.txt
+pytest>=8.0
+httpx>=0.27
+notebook>=7.0

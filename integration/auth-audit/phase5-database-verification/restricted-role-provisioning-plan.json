@@ -1,0 +1,20 @@
+﻿{
+    "status":  "review-required",
+    "proposedRole":  "hp_schema_inspector",
+    "requirements":  {
+                         "dedicatedLogin":  true,
+                         "noSuperuser":  true,
+                         "noCreateDatabase":  true,
+                         "noCreateRole":  true,
+                         "noReplication":  true,
+                         "noBypassRowLevelSecurity":  true,
+                         "noApplicationTableWriteAccess":  true,
+                         "noApplicationTableReadAccessRequired":  true,
+                         "databaseConnectOnlyWhereNeeded":  true,
+                         "minimumSchemaMetadataVisibility":  true,
+                         "credentialGeneratedLocally":  true,
+                         "connectionSecurityReviewed":  true
+                     },
+    "administratorApprovalRequired":  true,
+    "provisioningExecuted":  false
+}

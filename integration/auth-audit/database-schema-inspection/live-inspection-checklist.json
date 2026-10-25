@@ -1,0 +1,24 @@
+﻿{
+    "status":  "not-connected",
+    "services":  [
+                     "core",
+                     "booking",
+                     "homecare"
+                 ],
+    "prerequisites":  {
+                          "actualDatabaseNameVerified":  false,
+                          "restrictedInspectionAccountVerified":  false,
+                          "schemaMetadataPermissionsVerified":  false,
+                          "sslRequirementsReviewed":  false,
+                          "connectionTimeoutConfigured":  true,
+                          "readOnlyTransactionImplemented":  true,
+                          "noApplicationRowsQueried":  true
+                      },
+    "prohibited":  [
+                       "Print connection strings",
+                       "Print passwords or environment values",
+                       "Run migrations",
+                       "Modify account records",
+                       "Assume numeric IDs are shared across services"
+                   ]
+}

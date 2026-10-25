@@ -1,0 +1,17 @@
+﻿{
+    "version":  1,
+    "status":  "inspection-only",
+    "databaseTargets":  {
+                            "core":  "our_healthplatform",
+                            "booking":  "kartik_healthplatform",
+                            "homecare":  "healthplatform"
+                        },
+    "rules":  {
+                  "credentialsMustNotBePrinted":  true,
+                  "databaseNameMustBeVerified":  true,
+                  "readOnlyTransactionRequired":  true,
+                  "applicationDataMustNotBeQueried":  true,
+                  "migrationsMustNotRun":  true,
+                  "missingConfigurationMustReject":  true
+              }
+}

@@ -1,0 +1,19 @@
+﻿{
+    "roleName":  "hp_schema_inspector",
+    "status":  "review-required",
+    "purpose":  "Dedicated schema metadata inspection",
+    "requirements":  {
+                         "login":  true,
+                         "superuser":  false,
+                         "createDatabase":  false,
+                         "createRole":  false,
+                         "replication":  false,
+                         "bypassRowLevelSecurity":  false,
+                         "applicationTableWrites":  false,
+                         "applicationTableReadsRequired":  false,
+                         "minimumMetadataVisibility":  true,
+                         "dedicatedCredentials":  true
+                     },
+    "provisioningExecuted":  false,
+    "administratorApprovalRequired":  true
+}

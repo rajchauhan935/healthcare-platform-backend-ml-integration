@@ -1,0 +1,39 @@
+{
+  "modelType": "LinearRegression",
+  "dataSource": "synthetic",
+  "disclaimer": "Synthetic (fake) data only. The model learned from an invented world, so its error is NOT a measure of real-world accuracy. ETAs are estimates, not guaranteed arrival times.",
+  "featureNames": [
+    "distanceKm",
+    "isPeak",
+    "distanceKmXPeak"
+  ],
+  "coefficients": {
+    "distanceKm": 2.150913659591478,
+    "isPeak": -2.515171392924988,
+    "distanceKmXPeak": 0.8026829015985624
+  },
+  "intercept": 1.531801102971901,
+  "trainRows": 800,
+  "trainingDistanceKm": {
+    "min": 0.5173588307550449,
+    "max": 21.991108656205192
+  },
+  "peakHours": [
+    8,
+    9,
+    10,
+    17,
+    18,
+    19,
+    20
+  ],
+  "ambulanceTypes": [
+    "BLS"
+  ],
+  "outputDecimals": 2,
+  "splitSeed": 42,
+  "validationFraction": 0.2,
+  "scikitLearnVersion": "1.9.1",
+  "modelFile": "eta_linear_regression.joblib",
+  "modelFileSha256": "d9099674873f993e5b1596b89f146daf4ad4c338237e943fa0bc593d21bec287"
+}

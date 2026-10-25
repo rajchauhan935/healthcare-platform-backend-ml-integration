@@ -1,0 +1,20 @@
+{
+  "dataSource": "synthetic",
+  "disclaimer": "Synthetic (fake) data only. The travel times come from an invented model, so this number is NOT a measure of real-world accuracy. ETAs are estimates, not guaranteed arrival times.",
+  "datasetRows": 1000,
+  "trainRows": 800,
+  "validationRows": 200,
+  "validationFraction": 0.2,
+  "splitSeed": 42,
+  "exampleSeed": 42,
+  "baselineMaeMinutes": 11.22,
+  "meanSignedErrorMinutes": -8.2957,
+  "peakHours": {
+    "rows": 62,
+    "maeMinutes": 12.1097
+  },
+  "offPeakHours": {
+    "rows": 138,
+    "maeMinutes": 10.8203
+  }
+}

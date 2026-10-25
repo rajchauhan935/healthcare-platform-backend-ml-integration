@@ -1,0 +1,18 @@
+﻿{
+    "roadmap":  "Phase 4 preparation",
+    "plannedSteps":  400,
+    "preparationStatus":  "completed-subject-to-regression-results",
+    "sharedAuthenticationActivated":  false,
+    "liveDatabaseSchemaInspected":  false,
+    "persistentIdentityMappingDeployed":  false,
+    "authenticatedCrossServiceE2EVerified":  false,
+    "rollbackVerified":  false,
+    "nextRequiredWork":  [
+                             "Provision and verify restricted inspection credentials",
+                             "Inspect actual Core, Booking and Homecare account schemas",
+                             "Design and test persistent central-to-local identity mapping",
+                             "Integrate and validate audience-scoped RS256 authentication",
+                             "Run authenticated end-to-end and security regression tests",
+                             "Verify rollback before considering activation"
+                         ]
+}

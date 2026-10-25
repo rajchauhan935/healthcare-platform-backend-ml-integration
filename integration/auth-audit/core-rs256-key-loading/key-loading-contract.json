@@ -1,0 +1,16 @@
+﻿{
+  "version": 1,
+  "status": "isolated-prototype",
+  "algorithm": "RS256",
+  "issuer": "health-platform-core",
+  "privateKeyOwner": "core-backend",
+  "requirements": {
+    "privateKeyMustNotBeLogged": true,
+    "privateKeyMustNotBeCommitted": true,
+    "missingPrivateKeyMustReject": true,
+    "invalidPrivateKeyMustReject": true,
+    "bookingReceivesPrivateKey": false,
+    "homecareReceivesPrivateKey": false,
+    "productionKeyManagementPending": true
+  }
+}

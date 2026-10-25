@@ -1,0 +1,14 @@
+﻿{
+    "role":  "hp_schema_inspector",
+    "status":  "approval-pending",
+    "checks":  {
+                   "databaseTargetsReviewed":  false,
+                   "metadataResultsReviewed":  false,
+                   "rolePrivilegesReviewed":  false,
+                   "credentialStorageMethodApproved":  false,
+                   "administratorApprovedProvisioning":  false
+               },
+    "roleCreationAuthorized":  false,
+    "grantsAuthorized":  false,
+    "provisioningExecuted":  false
+}

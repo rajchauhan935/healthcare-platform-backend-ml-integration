@@ -1,0 +1,23 @@
+﻿{
+    "purpose":  "schema-metadata-inspection",
+    "accountType":  "dedicated",
+    "requirements":  {
+                         "loginRequired":  true,
+                         "superuserProhibited":  true,
+                         "databaseCreationProhibited":  true,
+                         "roleCreationProhibited":  true,
+                         "tableModificationProhibited":  true,
+                         "applicationDataAccessNotRequired":  true,
+                         "schemaMetadataAccessRequired":  true,
+                         "connectionEncryptionMustBeReviewed":  true
+                     },
+    "allowedInspectionTargets":  [
+                                     "information_schema.columns",
+                                     "current_database()",
+                                     "current_setting(\u0027transaction_read_only\u0027)",
+                                     "current_user",
+                                     "pg_roles"
+                                 ],
+    "credentialsProvisioned":  false,
+    "livePermissionsVerified":  false
+}

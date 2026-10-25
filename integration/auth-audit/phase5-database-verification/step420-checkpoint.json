@@ -1,0 +1,10 @@
+﻿{
+    "phase":  5,
+    "step":  420,
+    "status":  "inspection-security-preparation-complete",
+    "liveInspectionAuthorized":  false,
+    "liveDatabaseSchemaInspected":  false,
+    "persistentIdentityMappingDeployed":  false,
+    "sharedAuthenticationActivated":  false,
+    "nextMilestone":  "Test inspector runtime behavior using a mock PostgreSQL client"
+}

@@ -1,0 +1,13 @@
+﻿{
+    "phase":  6,
+    "step":  460,
+    "status":  "database-reconnaissance-awaiting-review",
+    "databaseExistenceVerified":  true,
+    "inspectionRolePreviouslyAbsent":  true,
+    "restrictedRoleRequirementsPrepared":  true,
+    "provisioningApprovalPending":  true,
+    "inspectionRoleProvisioned":  false,
+    "actualRolePrivilegesVerified":  false,
+    "sharedAuthenticationActivated":  false,
+    "nextMilestone":  "Review live metadata and authorize restricted inspection role"
+}

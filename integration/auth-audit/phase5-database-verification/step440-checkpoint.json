@@ -1,0 +1,11 @@
+﻿{
+    "phase":  5,
+    "step":  440,
+    "status":  "restricted-inspection-planning-complete",
+    "roleAuditTemplatePrepared":  true,
+    "liveDatabaseConnected":  false,
+    "actualAccountPrivilegesVerified":  false,
+    "schemaInspectionCompleted":  false,
+    "persistentIdentityMappingDeployed":  false,
+    "sharedAuthenticationActivated":  false
+}

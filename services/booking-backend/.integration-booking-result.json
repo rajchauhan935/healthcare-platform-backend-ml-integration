@@ -1,0 +1,17 @@
+{
+  "data": {
+    "id": "BK-0001",
+    "patientId": "TST-2d6d42e68f06",
+    "emergencyType": "general",
+    "pickupLat": 26.808,
+    "pickupLng": 83.426,
+    "ambulanceId": "AMB-010",
+    "hospitalId": "HOS-020",
+    "status": "requested",
+    "etaMinutes": 0,
+    "aiStatus": "fallback",
+    "recommendationReason": "AI recommendation fallback: fetch failed",
+    "createdAt": "2026-10-24T14:09:58.089Z",
+    "updatedAt": "2026-10-24T14:09:58.137Z"
+  }
+}

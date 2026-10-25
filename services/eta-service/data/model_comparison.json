@@ -1,0 +1,82 @@
+{
+  "dataSource": "synthetic",
+  "disclaimer": "Synthetic (fake) data only. The model learned from an invented world, so its error is NOT a measure of real-world accuracy. ETAs are estimates, not guaranteed arrival times.",
+  "datasetRows": 1000,
+  "trainRows": 800,
+  "validationRows": 200,
+  "splitSeed": 42,
+  "servedModel": "LinearRegression",
+  "featuresUsed": {
+    "linearRegression": [
+      "distanceKm",
+      "isPeak",
+      "distanceKmXPeak"
+    ],
+    "randomForest": [
+      "distanceKm",
+      "hour"
+    ]
+  },
+  "validation": {
+    "baseline": {
+      "maeMinutes": 11.22,
+      "meanSignedErrorMinutes": -8.2957,
+      "peakHours": {
+        "rows": 62,
+        "maeMinutes": 12.1097
+      },
+      "offPeakHours": {
+        "rows": 138,
+        "maeMinutes": 10.8203
+      }
+    },
+    "linearRegression": {
+      "maeMinutes": 9.8044,
+      "meanSignedErrorMinutes": -0.2985,
+      "peakHours": {
+        "rows": 62,
+        "maeMinutes": 12.7653
+      },
+      "offPeakHours": {
+        "rows": 138,
+        "maeMinutes": 8.4741
+      }
+    },
+    "randomForest": {
+      "maeMinutes": 9.9886,
+      "meanSignedErrorMinutes": -0.6184,
+      "peakHours": {
+        "rows": 62,
+        "maeMinutes": 13.1658
+      },
+      "offPeakHours": {
+        "rows": 138,
+        "maeMinutes": 8.5611
+      }
+    },
+    "constantMeanReference": {
+      "maeMinutes": 12.3429
+    }
+  },
+  "crossValidationOnTrainRows": {
+    "folds": 5,
+    "linearRegressionMaeMinutes": 8.9051,
+    "randomForestMaeMinutes": 9.2635
+  },
+  "linearRegressionVsBaseline": {
+    "maeDifferenceMinutes": 1.4156,
+    "bootstrap95Interval": [
+      0.4299,
+      2.3715
+    ],
+    "bootstrapResamples": 2000,
+    "bootstrapSeed": 42,
+    "modelBetterShareOfTrips": 0.555,
+    "verdict": "model_clearly_better"
+  },
+  "notes": [
+    "maeDifferenceMinutes is baseline MAE minus model MAE; positive means the model is better.",
+    "No validation trip was used to fit anything in this run; cross-validation used training trips only.",
+    "traffic level, road type and day of week are not available to the API, so no model here uses them."
+  ]
+}

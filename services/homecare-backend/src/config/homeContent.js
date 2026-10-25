@@ -1,0 +1,16 @@
+module.exports = {
+  quickServices: [
+    { id: 'ambulance-booking', label: 'Ambulance booking', icon: 'ambulance', route: '/bookings/new' },
+    { id: 'home-nurse', label: 'Home nurse', icon: 'nurse', route: '/services/home-nurse' },
+    { id: 'sample-collection', label: 'Sample collection', icon: 'test-tube', route: '/services/sample-collection' },
+    { id: 'tele-consult', label: 'Tele-consult', icon: 'video', route: '/services/tele-consult' },
+    { id: 'physio', label: 'Physiotherapy', icon: 'activity', route: '/services/physio' }
+  ],
+  emergencyContacts: [
+    { label: 'National Emergency', number: '112' },
+    { label: 'Ambulance', number: '108' },
+    { label: 'Patient Transport', number: '102' },
+    { label: 'Police', number: '100' },
+    { label: 'Fire', number: '101' }
+  ]
+};

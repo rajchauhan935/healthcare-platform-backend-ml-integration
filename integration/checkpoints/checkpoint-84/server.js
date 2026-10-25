@@ -1,0 +1,273 @@
+﻿"use strict";
+
+const express = require("express");
+const helmet = require("helmet");
+const cors = require("cors");
+const { rateLimit } = require("express-rate-limit");
+
+const app = express();
+
+app.disable("x-powered-by");
+app.use(helmet());
+app.use(cors({ origin: false }));
+app.use(express.json({ limit: "100kb" }));
+
+app.use(rateLimit({
+  windowMs: 60 * 1000,
+  limit: 100,
+  standardHeaders: "draft-7",
+  legacyHeaders: false
+}));
+
+const services = [
+  {
+    name: "own-backend",
+    url: "http://127.0.0.1:3000/"
+  },
+  {
+    name: "ujala-recommendation",
+    url: "http://127.0.0.1:8001/health"
+  },
+  {
+    name: "kartik-backend",
+    url: "http://127.0.0.1:4001/api/health"
+  },
+  {
+    name: "shreya-eta",
+    url: "http://127.0.0.1:8002/health"
+  },
+  {
+    name: "mam-backend",
+    url: "http://127.0.0.1:4000/api/health"
+  }
+];
+
+app.get("/health", (req, res) => {
+  res.json({
+    service: "health-platform-gateway",
+    status: "ok"
+  });
+});
+
+app.get("/services/health", async (req, res) => {
+  const results = await Promise.all(
+    services.map(async (service) => {
+      try {
+        const response = await fetch(service.url, {
+          signal: AbortSignal.timeout(3000)
+        });
+
+        return {
+          name: service.name,
+          healthy: response.status === 200,
+          statusCode: response.status
+        };
+      } catch {
+        return {
+          name: service.name,
+          healthy: false,
+          statusCode: null
+        };
+      }
+    })
+  );
+
+  const allHealthy = results.every(service => service.healthy);
+
+  res.status(allHealthy ? 200 : 503).json({
+    gateway: "health-platform",
+    allHealthy,
+    services: results
+  });
+});
+
+app.get("/api/integration/kartik/health", async (req, res) => {
+  try {
+    const response = await fetch(
+      "http://127.0.0.1:4001/api/health",
+      { signal: AbortSignal.timeout(3000) }
+    );
+
+    if (!response.ok) {
+      return res.status(502).json({
+        service: "kartik-backend",
+        status: "upstream-error"
+      });
+    }
+
+    const data = await response.json();
+
+    return res.status(200).json({
+      service: "kartik-backend",
+      status: "connected",
+      upstream: data
+    });
+  } catch {
+    return res.status(502).json({
+      service: "kartik-backend",
+      status: "unavailable"
+    });
+  }
+});
+app.post("/api/recommendation", async (req, res) => {
+  try {
+    const response = await fetch("http://127.0.0.1:8001/recommend", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(req.body),
+      signal: AbortSignal.timeout(5000)
+    });
+
+    const data = await response.json();
+
+    return res.status(response.status).json(data);
+  } catch {
+    return res.status(502).json({
+      error: "recommendation_service_unavailable"
+    });
+  }
+});
+app.post("/api/eta", async (req, res) => {
+  try {
+    const response = await fetch("http://127.0.0.1:8002/eta", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(req.body),
+      signal: AbortSignal.timeout(5000)
+    });
+
+    const source = response.headers.get("x-eta-source");
+
+    if (source === "model" || source === "baseline") {
+      res.set("X-ETA-Source", source);
+    }
+
+    const data = await response.json();
+
+    return res.status(response.status).json(data);
+  } catch {
+    return res.status(502).json({
+      error: "eta_service_unavailable"
+    });
+  }
+});
+app.get("/api/core/auth/me", async (req, res) => {
+  try {
+    const headers = {};
+
+    if (req.headers.authorization) {
+      headers.Authorization = req.headers.authorization;
+    }
+
+    const response = await fetch(
+      "http://127.0.0.1:3000/api/v1/auth/me",
+      {
+        method: "GET",
+        headers,
+        signal: AbortSignal.timeout(5000)
+      }
+    );
+
+    const contentType = response.headers.get("content-type") || "";
+
+    if (!contentType.includes("application/json")) {
+      return res.status(502).json({
+        error: "unexpected_core_backend_response"
+      });
+    }
+
+    const data = await response.json();
+    return res.status(response.status).json(data);
+  } catch {
+    return res.status(502).json({
+      error: "core_backend_unavailable"
+    });
+  }
+});
+app.get("/api/bookings", async (req, res) => {
+  try {
+    const headers = {};
+
+    if (req.headers.authorization) {
+      headers.Authorization = req.headers.authorization;
+    }
+
+    const response = await fetch(
+      "http://127.0.0.1:4001/api/bookings",
+      {
+        method: "GET",
+        headers,
+        signal: AbortSignal.timeout(5000)
+      }
+    );
+
+    const contentType = response.headers.get("content-type") || "";
+
+    if (!contentType.includes("application/json")) {
+      return res.status(502).json({
+        error: "unexpected_booking_backend_response"
+      });
+    }
+
+    const data = await response.json();
+
+    return res.status(response.status).json(data);
+  } catch {
+    return res.status(502).json({
+      error: "booking_backend_unavailable"
+    });
+  }
+});
+app.get("/api/homecare/session/me", async (req, res) => {
+  try {
+    const headers = {};
+
+    if (req.headers.authorization) {
+      headers.Authorization = req.headers.authorization;
+    }
+
+    const response = await fetch(
+      "http://127.0.0.1:4000/api/session/me",
+      {
+        method: "GET",
+        headers,
+        signal: AbortSignal.timeout(5000)
+      }
+    );
+
+    const contentType = response.headers.get("content-type") || "";
+
+    if (!contentType.includes("application/json")) {
+      return res.status(502).json({
+        error: "unexpected_homecare_backend_response"
+      });
+    }
+
+    const data = await response.json();
+
+    return res.status(response.status).json(data);
+  } catch {
+    return res.status(502).json({
+      error: "homecare_backend_unavailable"
+    });
+  }
+});
+const PORT = 5000;
+
+if (require.main === module) {
+  app.listen(PORT, "127.0.0.1", () => {
+    console.log(`Gateway running at http://127.0.0.1:${PORT}`);
+  });
+}
+
+module.exports = app;
+
+
+
+
+
+

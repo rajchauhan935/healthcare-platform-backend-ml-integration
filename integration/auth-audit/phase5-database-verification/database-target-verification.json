@@ -1,0 +1,19 @@
+﻿{
+    "status":  "pending-live-verification",
+    "targets":  {
+                    "core":  {
+                                 "expectedDatabase":  "our_healthplatform",
+                                 "existenceVerified":  false
+                             },
+                    "booking":  {
+                                    "expectedDatabase":  "kartik_healthplatform",
+                                    "existenceVerified":  false
+                                },
+                    "homecare":  {
+                                     "expectedDatabase":  "healthplatform",
+                                     "existenceVerified":  false
+                                 }
+                },
+    "applicationRecordsQueried":  false,
+    "credentialsStored":  false
+}

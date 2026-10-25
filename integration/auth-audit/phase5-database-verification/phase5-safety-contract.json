@@ -1,0 +1,20 @@
+﻿{
+    "version":  1,
+    "phase":  "database-verification-and-persistent-mapping",
+    "status":  "pre-inspection",
+    "databaseTargets":  {
+                            "core":  "our_healthplatform",
+                            "booking":  "kartik_healthplatform",
+                            "homecare":  "healthplatform"
+                        },
+    "rules":  {
+                  "credentialsMustRemainPrivate":  true,
+                  "dedicatedInspectionAccountRequired":  true,
+                  "databaseIdentityMustBeVerified":  true,
+                  "readOnlyInspectionRequired":  true,
+                  "applicationRowsMustNotBePrinted":  true,
+                  "migrationsRequireSeparateApproval":  true,
+                  "originalAuthenticationMustRemainUnchanged":  true,
+                  "sharedAuthenticationActivationProhibited":  true
+              }
+}

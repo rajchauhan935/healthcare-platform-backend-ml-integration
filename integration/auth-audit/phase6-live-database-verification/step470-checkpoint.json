@@ -1,0 +1,23 @@
+﻿{
+    "phase":  6,
+    "step":  470,
+    "status":  "live-database-investigation-awaiting-results-review",
+    "verifiedFromEarlierSteps":  {
+                                     "allThreeDatabasesExist":  true,
+                                     "bookingUsersTableFound":  true,
+                                     "bookingVisibleTableCount":  6,
+                                     "coreVisibleTableCount":  0,
+                                     "homecareVisibleTableCount":  0,
+                                     "inspectionRoleAbsentAtStep452":  true
+                                 },
+    "outstanding":  {
+                        "coreSchemaInitializationReviewed":  false,
+                        "homecareSchemaInitializationReviewed":  false,
+                        "runtimeDatabaseTargetsIndependentlyVerified":  false,
+                        "restrictedInspectionRoleProvisioned":  false,
+                        "persistentIdentityMappingImplemented":  false,
+                        "sharedAuthenticationActivated":  false,
+                        "authenticatedCrossServiceE2EVerified":  false
+                    },
+    "nextAction":  "Review Steps 462-469 and determine safe database initialization requirements"
+}

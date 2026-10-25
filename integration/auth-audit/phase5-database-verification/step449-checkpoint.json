@@ -1,0 +1,12 @@
+﻿{
+    "phase":  5,
+    "step":  449,
+    "status":  "postgresql-inspection-access-preparation",
+    "postgresToolsLocated":  true,
+    "databaseTargetsVerificationPending":  true,
+    "inspectionRoleProvisioningPending":  true,
+    "actualPrivilegesVerified":  false,
+    "liveSchemaInspectionCompleted":  false,
+    "persistentIdentityMappingDeployed":  false,
+    "sharedAuthenticationActivated":  false
+}

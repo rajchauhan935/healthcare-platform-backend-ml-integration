@@ -1,0 +1,12 @@
+{
+    "auditSteps":  600,
+    "status":  "audit-complete-implementation-pending",
+    "isolatedAuthenticationTestsPassed":  30,
+    "corePersistence":  "in-memory-repositories",
+    "homecareDatabase":  "application-tables-not-established",
+    "bookingDatabase":  "existing-tables-verified",
+    "identityMapping":  "design-only",
+    "sharedAuthentication":  "not-activated",
+    "migrationsExecutedByThisAudit":  false,
+    "productionReady":  false
+}

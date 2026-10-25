@@ -1,0 +1,12 @@
+﻿{
+    "phase":  6,
+    "step":  453,
+    "expectedDatabases":  {
+                              "core":  "our_healthplatform",
+                              "booking":  "kartik_healthplatform",
+                              "homecare":  "healthplatform"
+                          },
+    "databaseExistenceVerifiedInStep451":  true,
+    "inspectionRoleAbsentInStep452":  true,
+    "liveSchemaInspected":  false
+}

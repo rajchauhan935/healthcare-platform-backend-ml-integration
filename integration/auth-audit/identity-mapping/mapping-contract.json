@@ -1,0 +1,17 @@
+﻿{
+  "version": 1,
+  "status": "design-only",
+  "centralIssuer": "health-platform-core",
+  "services": [
+    "booking",
+    "homecare"
+  ],
+  "rules": {
+    "centralSubjectIsLocalDatabaseId": false,
+    "explicitMappingRequired": true,
+    "missingMappingMustReject": true,
+    "crossServiceMappingMustReject": true,
+    "inactiveMappingMustReject": true,
+    "localRoleMustNotBeInferredFromToken": true
+  }
+}

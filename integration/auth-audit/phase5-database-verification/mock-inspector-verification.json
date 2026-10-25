@@ -1,0 +1,13 @@
+﻿{
+    "status":  "mock-verification-passed",
+    "liveDatabaseConnected":  false,
+    "actualAccountPrivilegesVerified":  false,
+    "scenarios":  [
+                      "successful query sequence",
+                      "database mismatch rejects before metadata",
+                      "superuser rejects before metadata",
+                      "non-read-only transaction rejects before metadata",
+                      "metadata failure attempts rollback"
+                  ],
+    "actualSchemaInspectionPending":  true
+}

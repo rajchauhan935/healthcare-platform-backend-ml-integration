@@ -1,0 +1,20 @@
+﻿{
+    "status":  "blocked-pending-verification",
+    "services":  [
+                     "core",
+                     "booking",
+                     "homecare"
+                 ],
+    "prerequisites":  {
+                          "dedicatedCredentialsProvisioned":  false,
+                          "actualDatabaseTargetsConfirmed":  false,
+                          "accountPrivilegesIndependentlyVerified":  false,
+                          "metadataVisibilityConfirmed":  false,
+                          "connectionSecurityReviewed":  false,
+                          "inspectorRuntimeBehaviorTested":  false
+                      },
+    "allowedScope":  "schema metadata only",
+    "applicationDataQueriesAllowed":  false,
+    "migrationsAllowed":  false,
+    "sharedAuthenticationActivationAllowed":  false
+}
